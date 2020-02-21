@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class ItemManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    public string nameofItem;
+    public bool addItem = true;
+
+
+    public virtual void onPickup()
     {
-        
+        gameObject.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
+    public virtual void onDrop()
     {
-        
+        gameObject.SetActive(true);
     }
 }
