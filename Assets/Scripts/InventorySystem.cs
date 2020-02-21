@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class InventorySystem : MonoBehaviour
 {
+
+    public List<Items> inv;
+    
     // Start is called before the first frame update
     void Start()
     {
