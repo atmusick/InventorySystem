@@ -14,11 +14,11 @@ public class InventorySystem : MonoBehaviour
         inv = new List<ItemManager>();
     }
 
-    public bool HaveItemName (string itemName)
+    public bool HaveItemName (string nameofItem)
     {
         foreach (ItemManager item in inv)
         {
-            if (itemName == item.itemName)
+            if (nameofItem == item.nameofItem)
             {
                 return true;
             }
@@ -32,7 +32,7 @@ public class InventorySystem : MonoBehaviour
         item.InventorySystem = this;
         item.onPickup();
 
-        if(item.addToInventory)
+        if(item.addItem)
         {
             if(!inv.Contains(item))
             {
@@ -52,7 +52,7 @@ public class InventorySystem : MonoBehaviour
         if(inv.Contains(item))
         {
             inv.Remove(item);
-            item.OnDrop();
+            item.onDrop();
         }
     }
 
