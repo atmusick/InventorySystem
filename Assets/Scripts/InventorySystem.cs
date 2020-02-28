@@ -5,18 +5,18 @@ using UnityEngine;
 public class InventorySystem : MonoBehaviour
 {
 
-    public List<Items> inv;
+    public List<ItemManager> inv;
     
     // Start is called before the first frame update
     void Start()
     {
         //instantiate list
-        inv = new List<Items>();
+        inv = new List<ItemManager>();
     }
 
     public bool HaveItemName (string itemName)
     {
-        foreach (Items item in inv)
+        foreach (ItemManager item in inv)
         {
             if (itemName == item.itemName)
             {
@@ -27,7 +27,7 @@ public class InventorySystem : MonoBehaviour
     }
 
 
-    public void Pickup (Items item)
+    public void Pickup (ItemManager item)
     {
         item.InventorySystem = this;
         item.onPickup();
@@ -47,7 +47,7 @@ public class InventorySystem : MonoBehaviour
         
     }
 
-    public void Drop (Items item)
+    public void Drop (ItemManager item)
     {
         if(inv.Contains(item))
         {
@@ -56,7 +56,7 @@ public class InventorySystem : MonoBehaviour
         }
     }
 
-    public Items[] GetInv()
+    public ItemManager[] GetInv()
         {
             return inv.ToArray();
         }
