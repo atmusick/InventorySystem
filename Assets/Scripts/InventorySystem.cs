@@ -37,14 +37,14 @@ public class InventorySystem : MonoBehaviour
             if(!inv.Contains(item))
             {
                 inv.Add(item);
-                {
-                    else
-                    {
-                        Debug.Log ("NO");
-                    }
-                }
             }
+                 else
+                {
+                     Debug.Log ("NO");
+                }
+                
         }
+        
     }
 
     public void Drop (Items item)
