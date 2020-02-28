@@ -11,9 +11,9 @@ public class Collectible : ItemManager
     }
     public override void onPickup()
     {
-        foreach (Item I in InventorySystem.GetInv())
+        foreach (ItemManager I in InventorySystem.GetInv())
         {
-            if (i.GetType() == typeof(boots))
+            if (i.GetType() == typeof(Collectible))
             {
                 InventorySystem.dropItem(i);
 
