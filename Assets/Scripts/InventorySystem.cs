@@ -29,7 +29,7 @@ public class InventorySystem : MonoBehaviour
 
     public void Pickup (ItemManager item)
     {
-        item.InventorySystem = this;
+        item.inventorySystem = this;
         item.onPickup();
 
         if(item.addItem)
