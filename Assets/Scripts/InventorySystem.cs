@@ -14,6 +14,7 @@ public class InventorySystem : MonoBehaviour
         inv = new List<ItemManager>();
     }
 
+    //looks to itemManager to check for items in inv
     public bool HaveItemName (string nameofItem)
     {
         foreach (ItemManager item in inv)
@@ -26,7 +27,7 @@ public class InventorySystem : MonoBehaviour
         return false;
     }
 
-
+    //references self and onPickup in itemManager, adds item to inventory 
     public void Pickup (ItemManager item)
     {
         item.inventorySystem = this;
@@ -46,16 +47,16 @@ public class InventorySystem : MonoBehaviour
         }
         
     }
-
+    //removes item from inventory
     public void Drop (ItemManager item)
     {
-        if(inv.Contains(item))
+        if(inv.Contains(item))//if we have it
         {
-            inv.Remove(item);
+            inv.Remove(item);//then remove
             item.onDrop();
         }
     }
-
+    //stores inventory as array
     public ItemManager[] GetInv()
         {
             return inv.ToArray();
