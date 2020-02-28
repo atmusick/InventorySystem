@@ -9,10 +9,24 @@ public class Collectible : ItemManager
     {
         addItem = true;
     }
-
-    // Update is called once per frame
-    void Update()
+    public override void onPickup()
     {
-        
+        foreach (Item I in InventorySystem.GetInv())
+        {
+            if (i.GetType() == typeof(boots))
+            {
+                InventorySystem.dropItem(i);
+
+            }
+
+        }
+
+        base.onPickup();
+        GameObject.FindGameObjectWithTag("Player").GetComponent<SpriteRenderer>().color = GetComponent<SpriteRenderer>().color;
+    }
+    public override void onDrop()
+    {
+        GameObject.FindGameObjectWithTag("Player").GetComponent<SpriteRenderer>().color = Color.cyan;
+        Destroy(gameObject);
     }
 }
