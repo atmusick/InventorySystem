@@ -10,12 +10,17 @@ public class InventorySystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+<<<<<<< Updated upstream
         //instantiate list
         inv = new List<Items>();
+=======
+
+>>>>>>> Stashed changes
     }
 
     public bool HaveItemName (string itemName)
     {
+<<<<<<< Updated upstream
         foreach (Items item in inv)
         {
             if (itemName == item.itemName)
@@ -24,6 +29,9 @@ public class InventorySystem : MonoBehaviour
             }
         }
         return false;
+=======
+
+>>>>>>> Stashed changes
     }
 
 
